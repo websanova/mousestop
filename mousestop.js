@@ -7,13 +7,13 @@
  * @copyright       Copyright (c) 2012 Websanova.
  * @license         This mousestop jQuery plug-in is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
- * @docs            http://www.websanova.com/plugins/websanova/mousestop
- * @version         Version 1.0
+ * @github          http://github.com/websanova/mousestop
+ * @version         Version 1.0.0
  *
  ******************************************/
 (function($)
 {
-	var defaultSettings =
+	var $.fn.mousestop.defaultSettings =
 	{
 		timeToStop		: null,			// the amount of time the stop even thas to run before it will not run at all anymore
 		delayToStop		: '300', 		// the delay for what is considered a "stop"
@@ -23,7 +23,7 @@
 	
 	$.fn.mousestop = function(func, settings)
 	{
-		settings = $.extend({}, defaultSettings, settings || {});
+		settings = $.extend({}, $.fn.mousestop.defaultSettings, settings || {});
 		
 		return this.each(function()
 		{
