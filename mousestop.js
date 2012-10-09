@@ -8,10 +8,10 @@
  * @license         This mousestop jQuery plug-in is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/mousestop
- * @version         Version 1.1.0
+ * @version         Version 1.1.1
  *
  ******************************************/
- (function($)
+(function($)
 {
 	$.fn.mousestop = function(func, settings)
 	{
@@ -55,7 +55,7 @@
 								e.pageX = x;
 								e.pageY = y;
 								
-								if(func) func.apply(this [e]);
+								if(func) func.apply(this, [e]);
 							}
 							//else do nothing, just iterate
 						}else movement = false;//we can turn this off to avoid using the timeout in the mousemove
