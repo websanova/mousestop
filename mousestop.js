@@ -8,19 +8,11 @@
  * @license         This mousestop jQuery plug-in is dual licensed under the MIT and GPL licenses.
  * @link            http://www.websanova.com
  * @github          http://github.com/websanova/mousestop
- * @version         Version 1.0.0
+ * @version         Version 1.1.0
  *
  ******************************************/
-(function($)
+ (function($)
 {
-	var $.fn.mousestop.defaultSettings =
-	{
-		timeToStop		: null,			// the amount of time the stop even thas to run before it will not run at all anymore
-		delayToStop		: '300', 		// the delay for what is considered a "stop"
-		onMouseout		: null,			// function to run when we mouseout of our element
-		onStopMove		: null			// function to run when we start moving again after the stop
-	};
-	
 	$.fn.mousestop = function(func, settings)
 	{
 		settings = $.extend({}, $.fn.mousestop.defaultSettings, settings || {});
@@ -63,7 +55,7 @@
 								e.pageX = x;
 								e.pageY = y;
 								
-								func(e);
+								if(func) func.apply(this [e]);
 							}
 							//else do nothing, just iterate
 						}else movement = false;//we can turn this off to avoid using the timeout in the mousemove
@@ -81,7 +73,7 @@
 				counter = 0;//reset counter for when we mouseover again
 				movement = false;//set movement back to false
 				
-				settings.onMouseout(e);//call our mouseout
+				if(settings.onMouseout) settings.onMouseout.apply(this, [e]);//call our mouseout
 			})
 			.mousemove(function(e)
 			{
@@ -95,15 +87,23 @@
 					movementTimer = setTimeout(function()
 					{
 						movement = false;
-						if(settings.timeToStop == null) func(e);
+						if(settings.timeToStop == null && func) func.apply(this, [e]);
 					}, settings.delayToStop);
 				}
 				else
 				{
-					settings.onStopMove(e);//call our mousemove - this is after the stop
+					if(settings.onStopMove) settings.onStopMove.apply(this, [e]);//call our mousemove - this is after the stop
 					movement = true;
 				}
 			});
 		});
 	}
+
+	$.fn.mousestop.defaultSettings =
+	{
+		timeToStop		: null,			// the amount of time the stop event has to run before it will not run at all anymore
+		delayToStop		: '300', 		// the delay for what is considered a "stop"
+		onMouseout		: null,			// function to run when we mouseout of our element
+		onStopMove		: null			// function to run when we start moving again after the stop
+	};
 })(jQuery);

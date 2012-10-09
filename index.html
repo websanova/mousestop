@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>mousestop</title>
+	
+	<script type="text/javascript" src="./inc/jquery.1.8.2.min.js"></script>
+	
+	<script type="text/javascript" src="./mousestop.js"></script>
+	
+</head>
+<body>
+
+	<h1>mousestop</h1>
+
+	<div id="test" style="display:inline-block;padding:20px;border:solid 1px;">hover over me</div>
+	
+	<div id="output"></div>
+
+	<script type="text/javascript">
+
+		$('#test').mousestop(function()
+		{
+			$("#output").append('<div>stopped</div>');
+		});
+
+	</script>
+	
+</body>
+</html>
