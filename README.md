@@ -2,11 +2,6 @@
 
 A jQuery mousestop event handler.
 
-## Resources
-
-* [Boilerplate Article (with comments)](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
-* [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/tutorials/jquery/the-ultimate-guide-to-writing-jquery-plugins)
-
 ## Settings
 
 Available options with notes, the values here are the defaults.
@@ -37,6 +32,10 @@ $('#elem').mousestop({
 </script>
 ```
 
+## Resources
+
+* [Boilerplate Article (with comments)](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
+* [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/tutorials/jquery/the-ultimate-guide-to-writing-jquery-plugins)
 
 ## License
 
