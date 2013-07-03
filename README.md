@@ -8,8 +8,7 @@ A jQuery mousestop plugin to compliment other mouse events such as move, over an
 The most basic usage is to pass in the callback for a stop event.
 
 ```js
-$('#el').mousestop(function()
-{
+$('#el').mousestop(function() {
     console.log("stopped")
 });
 ```
@@ -17,8 +16,7 @@ $('#el').mousestop(function()
 We can also pass the `delay` time in the second parameter to specify the amount of time to delay before a stop triggers.  The default is 300 milliseconds
 
 ```js
-$('#el').mousestop(function()
-{
+$('#el').mousestop(function() {
     console.log("stopped")
 }, 400);
 ```
@@ -26,8 +24,7 @@ $('#el').mousestop(function()
 There is also a settings parameter called `timeToStop`.  This parameter specifies a window of time that the stop event has to occur.  After that time the stop event will no longer trigger whatsoever.  Leaving the value unset or setting it to null will deactivate this timer.
 
 ```js
-$('#el').mousestop(function()
-{
+$('#el').mousestop(function() {
     console.log("stopped")
 }, {timeToStop: 1000});
 ```
@@ -35,8 +32,7 @@ $('#el').mousestop(function()
 To set both a delay and a settings parameter.
 
 ```js
-$('#el').mousestop(function()
-{
+$('#el').mousestop(function() {
     console.log("stopped")
 }, 300, {timeToStop: 1000});
 ```
