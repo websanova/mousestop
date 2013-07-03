@@ -1,41 +1,58 @@
 # mousestop.js
 
-A jQuery mousestop event handler.
+A jQuery mousestop plugin to compliment other mouse events such as move, over and out coming in at ~660 bytes minified.
 
-## Settings
 
-Available options with notes, the values here are the defaults.
+## Examples
 
-```javascript
-$('#elem').mousestop({
-    timeToStop      : null,         // the amount of time the stop event has to run before it will not run at all anymore
-    delayToStop     : '300',        // the delay for what is considered a "stop"
-    onMouseout      : null,         // function to run when we mouseout of our element
-    onStopMove      : null          // function to run when we start moving again after the stop
+The most basic usage is to pass in the callback for a stop event.
+
+```js
+$('#el').mousestop(function()
+{
+    console.log("stopped")
 });
 ```
 
-## Example
+We can also pass the `delay` time in the second parameter to specify the amount of time to delay before a stop triggers.  The default is 300 milliseconds
 
-```html
-<div id="test" style="display:inline-block;padding:20px;border:solid 1px;">hover over me</div>
-    
-<div id="output"></div>
-
-<script type="text/javascript">
-
-    $('#test').mousestop(function()
-    {
-        $("#output").append('<div>stopped</div>');
-    });
-
-</script>
+```js
+$('#el').mousestop(function()
+{
+    console.log("stopped")
+}, 400);
 ```
+
+There is also a settings parameter called `timeToStop`.  This parameter specifies a window of time that the stop event has to occur.  After that time the stop event will no longer trigger whatsoever.  Leaving the value unset or setting it to null will deactivate this timer.
+
+```js
+$('#el').mousestop(function()
+{
+    console.log("stopped")
+}, {timeToStop: 1000});
+```
+
+To set both a delay and a settings parameter.
+
+```js
+$('#el').mousestop(function()
+{
+    console.log("stopped")
+}, 300, {timeToStop: 1000});
+```
+
+
+## Grunt.js
+
+If you want to use Grunt you will need to install the required plugins locally using `npm install` in the root folder of the project.  If you need to setup Grunt on your system you can follow this [Setting up Grunt.js](http://www.websanova.com/blog/javascript/how-to-setup-grunt) guide.
+
 
 ## Resources
 
-* [jQuery Plugin Development Boilerplate](http://www.websanova.com/tutorials/jquery/jquery-plugin-development-boilerplate)
-* [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/tutorials/jquery/the-ultimate-guide-to-writing-jquery-plugins)
+* [More jQuery plugins by Websanova](http://websanova.com/plugins)
+* [jQuery Plugin Development Boilerplate](http://wboiler.websanova.com)
+* [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/blog/jquery/the-ultimate-guide-to-writing-jquery-plugins)
+
 
 ## License
 

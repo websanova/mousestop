@@ -1,0 +1,19 @@
+{
+  "name": "mousestop",
+  "version": "2.0.0",
+  "description": "A jQuery mousestop plugin to compliment other mouse events such as move, over and out coming in at ~660 bytes minified.",
+  "main": "mousestop.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/websanova/mousestop"
+  },
+  "author": {
+    "name" : "Websanova"
+  },
+  "homepage" : "https://github.com/websanova/mousestop",
+  "license": "MIT, GPL",
+  "dependencies": {
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-jshint": ""
+  }
+}
