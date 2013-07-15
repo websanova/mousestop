@@ -1,7 +1,7 @@
 {
   "name": "mousestop",
   "title": "mousestop jQuery Plugin",
-  "description": "A jQuery mousestop plugin to compliment other mouse events such as move, over and out coming in at ~660 bytes minified.",
+  "description": "A jQuery mousestop plugin to compliment other mouse events such as `mousemove`, `mouseout` and `mouseout` coming in at ~1Kb minified.",
   "keywords": [
     "websanova",
     "mousestop",
@@ -9,9 +9,11 @@
     "stop",
     "mousemove",
     "mouseout",
-    "mouseover"
+    "mouseover",
+    "mouseleave",
+    "mouseenter"
   ],
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": {
     "name": "Websanova",
     "email": "rob@websanova.com",

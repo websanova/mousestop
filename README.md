@@ -1,7 +1,8 @@
 # mousestop.js
 
-A jQuery mousestop plugin to compliment other mouse events such as move, over and out coming in at ~660 bytes minified.
+A jQuery mousestop plugin to compliment other mouse events such as `mousemove`, `mouseout` and `mouseout` coming in at ~1Kb minified.
 
+The `mousestop` event was created using the jQuery special API and therefore can be binded like any other event.
 
 ## Examples
 
@@ -16,25 +17,43 @@ $('#el').mousestop(function() {
 We can also pass the `delay` time in the second parameter to specify the amount of time to delay before a stop triggers.  The default is 300 milliseconds
 
 ```js
-$('#el').mousestop(function() {
+$('#el').mousestop(2000, function() {
     console.log("stopped")
-}, 400);
+});
 ```
 
 There is also a settings parameter called `timeToStop`.  This parameter specifies a window of time that the stop event has to occur.  After that time the stop event will no longer trigger whatsoever.  Leaving the value unset or setting it to null will deactivate this timer.
 
 ```js
-$('#el').mousestop(function() {
+$('#el').mousestop({timeToStop: 1000}, function() {
     console.log("stopped")
-}, {timeToStop: 1000});
+});
 ```
 
 To set both a delay and a settings parameter.
 
 ```js
-$('#el').mousestop(function() {
+$('#el').mousestop({delay: 400, timeToStop: 1000}, function() {
     console.log("stopped")
-}, 300, {timeToStop: 1000});
+});
+```
+
+We can also `bind` and `trigger` the event as you would expect with any other element.
+
+```js
+$('#el').bind('mousestop', function(){
+	console.log('stopped');
+});
+
+$('#el').trigger('mousestop');
+```
+
+Since we are using the jQuery special API we can also use the `on` method to bind the event as well.
+
+```js
+$('#el').on('mousestop', function(){
+	console.log('stopped');
+});
 ```
 
 

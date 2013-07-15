@@ -12,39 +12,48 @@
 	<h1>mousestop</h1>
 
 	<div id="test" style="display:inline-block;padding:20px;border:solid 1px;">test default</div>
-	<div id="test2" style="display:inline-block;padding:20px;border:solid 1px;">test delay</div>
-	<div id="test3" style="display:inline-block;padding:20px;border:solid 1px;">test settings</div>
-	<div id="test4" style="display:inline-block;padding:20px;border:solid 1px;">test delay and settings</div>
+	<div id="test2" style="display:inline-block;padding:20px;border:solid 1px;">test (long) delay</div>
+	<div id="test3" style="display:inline-block;padding:20px;border:solid 1px;">test .on()</div>
+	<div id="test4" style="display:inline-block;padding:20px;border:solid 1px;">test .on() settings</div>
 
 	<script type="text/javascript">
+		// test 1
 		$('#test')
 		.mousestop(function() {
 			console.log('mousestop');
-		}, 400)
-		.mousemove(function(){
+		})
+		.mousemove(function() {
 			console.log('mousemove');
 		})
-		.mouseover(function(){
+		.mouseover(function() {
 			console.log('mouseover');
 		})
-		.mouseout(function(){
+		.mouseout(function() {
 			console.log('mouseout');
 		});
 
+		$('#test').mousestop();
+		$('#test').trigger('mousestop');
+
+		// test 2
 		$('#test2')
-		.mousestop(function() {
-			console.log('mousestop test 2');
-		}, 100)
+		.mousestop(2000, function() {
+			console.log('mousestop 2');
+		});
 
+		// test 3
 		$('#test3')
-		.mousestop(function() {
-			console.log('mousestop test 3');
-		}, {timeToStop: 1000})
+		.on('mousestop', function() {
+			console.log('mousestop 3');
+		});
 
-		$('#test4')
-		.mousestop(function() {
-			console.log('mousestop test 4');
-		}, 100, {timeToStop: 1000})
+		// test 4
+		$('#test4').on('mousestop', {timeToStop:1000}, test);
+
+		function test(e) {
+			console.log(e);
+			console.log('mousestop 4');
+		}
 	</script>
 </body>
 </html>

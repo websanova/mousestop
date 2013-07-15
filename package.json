@@ -1,7 +1,7 @@
 {
   "name": "mousestop",
-  "version": "2.0.0",
-  "description": "A jQuery mousestop plugin to compliment other mouse events such as move, over and out coming in at ~660 bytes minified.",
+  "version": "3.0.0",
+  "description": "A jQuery mousestop plugin to compliment other mouse events such as `mousemove`, `mouseout` and `mouseout` coming in at ~1Kb minified.",
   "main": "mousestop.js",
   "repository": {
     "type": "git",
