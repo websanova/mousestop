@@ -56,7 +56,7 @@
 
     $.fn.mousestop = function(data, fn) {
         if (typeof data === 'function') { fn = data; }
-        return arguments.length > 0 ? this.bind('mousestop', _data(data), fn) : this.trigger('mousestop');
+        return arguments.length > 0 ? this.bind('mousestop', data, fn) : this.trigger('mousestop');
     };
 
     $.fn.mousestop.defaults = {
