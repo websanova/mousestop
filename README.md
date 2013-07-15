@@ -4,6 +4,10 @@ A jQuery mousestop plugin to compliment other mouse events such as `mousemove`, 
 
 The `mousestop` event was created using the jQuery special API and therefore can be binded like any other event.
 
+* [View the mousestop demo](http://mousestop.websanova.com)
+* [Download the lastest version of mousestop](https://github.com/websanova/mousestop/tags)
+
+
 ## Examples
 
 The most basic usage is to pass in the callback for a stop event.
