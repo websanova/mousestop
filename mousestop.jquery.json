@@ -33,7 +33,7 @@
     }
   ],
   "bugs": "https://github.com/websanova/mousestop/issues",
-  "homepage": "http://websanova.com/plugins/mousestop",
+  "homepage": "http://mousestop.websanova.com",
   "docs": "https://github.com/websanova/mousestop#mousestopjs",
   "download": "https://github.com/websanova/mousestop/tags",
   "dependencies": {
