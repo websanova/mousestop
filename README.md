@@ -2,7 +2,7 @@
 
 A jQuery mousestop plugin to compliment other mouse events such as `mousemove`, `mouseout` and `mouseout` coming in at ~1Kb minified.
 
-The `mousestop` event was created using the jQuery special API and therefore can be binded like any other event.
+The `mousestop` event was created using the [jQuery Special Events API](http://www.websanova.com/blog/jquery/custom-events-using-the-jquery-special-events-api) and therefore can be binded like any other event.
 
 * [View the mousestop demo](http://mousestop.websanova.com)
 * [Download the lastest version of mousestop](https://github.com/websanova/mousestop/tags)
@@ -68,6 +68,7 @@ If you want to use Grunt you will need to install the required plugins locally u
 
 ## Resources
 
+* [jQuery Special Events API](http://www.websanova.com/blog/jquery/custom-events-using-the-jquery-special-events-api)
 * [More jQuery plugins by Websanova](http://websanova.com/plugins)
 * [jQuery Plugin Development Boilerplate](http://wboiler.websanova.com)
 * [The Ultimate Guide to Writing jQuery Plugins](http://www.websanova.com/blog/jquery/the-ultimate-guide-to-writing-jquery-plugins)
