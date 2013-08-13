@@ -1,59 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	
-	<title>mousestop</title>
-	
-	<script type="text/javascript" src="./lib/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="./mousestop.js"></script>
+  <meta charset="utf-8">
+  <title>Websanova :: mousestop</title>
+  
+  <!-- filestart -->
+  <link rel="icon" type="image/vnd.microsoft.icon"  href="./demo/img/favicon.ico" />
+  <link rel="Stylesheet" type="text/css" href="./demo/demo.css" />
+  <script type="text/javascript" src="./lib/jquery.1.10.2.min.js"></script>
+  <!-- fileend -->
 </head>
 <body>
-	<h1>mousestop</h1>
+  <!-- headstart -->
+  <header>
+    <a id="header-logo" href="http://websanova.com"></a>
 
-	<div id="test" style="display:inline-block;padding:20px;border:solid 1px;">test default</div>
-	<div id="test2" style="display:inline-block;padding:20px;border:solid 1px;">test (long) delay</div>
-	<div id="test3" style="display:inline-block;padding:20px;border:solid 1px;">test .on()</div>
-	<div id="test4" style="display:inline-block;padding:20px;border:solid 1px;">test .on() settings</div>
+    <div id="header-links">
+      <a href="http://websanova.com">Blog</a>
+      <a href="http://websanova.com/plugins">Plugins</a>
+      <a href="http://websanova.com/extensions">Extensions</a>
+      <a href="http://websanova.com/services">Services</a>
+    </div>
+  </header>
+  <!-- headend -->
 
-	<script type="text/javascript">
-		// test 1
-		$('#test')
-		.mousestop(function() {
-			console.log('mousestop');
-		})
-		.mousemove(function() {
-			console.log('mousemove');
-		})
-		.mouseover(function() {
-			console.log('mouseover');
-		})
-		.mouseout(function() {
-			console.log('mouseout');
-		});
+  <div id="content">
+    <h1 id="plugin-name">mousestop.js</h1>
 
-		$('#test').mousestop();
-		$('#test').trigger('mousestop');
+    <div class="content-box">
+      <div id="test" style="display:inline-block;padding:20px;border:solid 1px;">test default</div>
+      <div id="test2" style="display:inline-block;padding:20px;border:solid 1px;">test (long) delay</div>
+      <div id="test3" style="display:inline-block;padding:20px;border:solid 1px;">test .on()</div>
+      <div id="test4" style="display:inline-block;padding:20px;border:solid 1px;">test .on() timeToStop</div>
 
-		// test 2
-		$('#test2')
-		.mousestop(2000, function() {
-			console.log('mousestop 2');
-		});
+      <div id="output" style="width:300px;height:150px;margin-top:5px;border:solid #CACACA 1px;overflow:auto;"></div>
 
-		// test 3
-		$('#test3')
-		.on('mousestop', function() {
-			console.log('mousestop 3');
-		});
+      <script type="text/javascript" src="./mousestop.js"></script>
+      <script type="text/javascript">
+        $('#test')
+        .mousestop(function() { $('#output').prepend('mousestop<br/>'); })
+        .mousemove(function() { $('#output').prepend('mousemove<br/>'); })
+        .mouseover(function() { $('#output').prepend('mouseover<br/>'); })
+        .mouseout(function() { $('#output').prepend('mouseout<br/>'); });
 
-		// test 4
-		$('#test4').on('mousestop', {timeToStop:1000}, test);
+        $('#test').mousestop().trigger('mousestop');
+        $('#test2').mousestop(2000, function() { $('#output').prepend('mousestop 2<br/>'); });
+        $('#test3').on('mousestop', function() { $('#output').prepend('mousestop 3<br/>'); });
+        $('#test4').on('mousestop', {timeToStop:1000}, test);
 
-		function test(e) {
-			console.log(e);
-			console.log('mousestop 4');
-		}
-	</script>
+        function test(e) {
+          console.log(e);
+          $('#output').prepend('mousestop 4<br/>');
+        }
+      </script>
+    </div>
+
+  </div>
+
+  <!-- footstart -->
+  <footer>
+    <div id="footer-icons">
+      <!--a id="youtube-icon" href="http://websanova.com/youtube" target="_blank"></a-->
+      <a id="stumbleupon-icon" href="http://websanova.com/stumbleupon" target="_blank"></a>
+      <a id="linkedin-icon" href="http://websanova.com/linkedin" target="_blank"></a>
+      <a id="facebook-icon" href="http://websanova.com/facebook" target="_blank"></a>
+      <a id="googleplus-icon" href="http://websanova.com/googleplus" target="_blank"></a>
+      <a id="twitter-icon" href="http://websanova.com/twitter" target="_blank"></a>
+      <a id="github-icon" href="http://websanova.com/github" target="_blank"></a>
+      <a id="rss-icon" href="http://websanova.com/feed" target="_blank"></a>
+    </div>
+  </footer>
+  <!-- footend -->
 </body>
 </html>
